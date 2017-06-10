@@ -1,7 +1,7 @@
 <?php
 include 'tcpdf/tcpdf.php';
 
-class XTCPDF extends TCPDF {
+class CantikPdf extends TCPDF {
 
     var $xheadertext = 'PDF created using CakePHP and TCPDF';
     var $xheadercolor = array(0, 0, 200);

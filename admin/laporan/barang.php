@@ -53,6 +53,28 @@ while ($r = $result->fetch_array()) {
     $html .= '</tr>';
 }
 $html .= '</table>';
+$style = array(
+    'position' => '',
+    'align' => 'C',
+    'stretch' => false,
+    'fitwidth' => true,
+    'cellfitalign' => '',
+    'border' => true,
+    'hpadding' => 'auto',
+    'vpadding' => 'auto',
+    'fgcolor' => array(0,0,0),
+    'bgcolor' => false, //array(255,255,255),
+    'text' => true,
+    'font' => 'helvetica',
+    'fontsize' => 8,
+    'stretchtext' => 4
+);
+
+// PRINT VARIOUS 1D BARCODES
+
+// CODE 39 - ANSI MH10.8M-1983 - USD-3 - 3 of 9.
+$pdf->Cell(0, 0, 'CODE 39 - ANSI MH10.8M-1983 - USD-3 - 3 of 9', 0, 1);
+$pdf->write1DBarcode('CODE 39', 'C39', '', '', '', 18, 0.4, $style, 'N');
 $pdf->writeHTML($html);
 //$pdf->lastPage();
 $pdf->Output('Laporan Koleksi.pdf', 'I');

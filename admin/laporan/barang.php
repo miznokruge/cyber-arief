@@ -3,7 +3,7 @@ include '../../xtcpdf.php';
 include "../../koneksi.php";
 set_time_limit(300000);
 $posisi = isset($_GET['posisi']) && $_GET['posisi'] !='' ? $_GET['posisi'] : 'P';
-$pdf = new XTCPDF($posisi, PDF_UNIT, 'A4', true, 'UTF-8', false);
+$pdf = new CantikPdf($posisi, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Mizno Kruge');
 $pdf->SetTitle('TCPDF Example 048');
